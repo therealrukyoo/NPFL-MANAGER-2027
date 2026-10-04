@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NPFL Manager 2027 – Motion Promo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ground:#0a1420;--green:#0aa35b;--turf:#0f5a35;--turf2:#0c4a2c;--gold:#eab94c;--spring:cubic-bezier(.34,1.56,.64,1);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{margin:0;height:100%;background:#050a10}
+body{display:flex;align-items:center;justify-content:center}
+.stage{position:relative;overflow:hidden;width:min(100vw,calc(100vh*16/9));aspect-ratio:16/9;container-type:size;background:var(--ground);color:#fff;font-family:'DM Sans',sans-serif;transition:opacity .35s}
+.stage.fade{opacity:0}
+.a{opacity:0}
+.abs{position:absolute}
+.circ{left:68cqw;top:11cqw;width:36cqw;height:36cqw;border-radius:50%;background:var(--turf);box-shadow:0 0 0 .6cqw rgba(255,255,255,.16)}
+.band{left:0;bottom:0;width:100%;height:6cqw;background:repeating-linear-gradient(90deg,var(--turf) 0,var(--turf) 8cqw,var(--turf2) 8cqw,var(--turf2) 16cqw)}
+.beams{left:0;top:0;width:100%;height:100%}
+.eyebrow{left:6cqw;top:5cqw;font-size:1.5cqw;font-weight:700;letter-spacing:.35cqw;color:var(--gold)}
+.title{left:6cqw;top:8.5cqw;font-family:'Bebas Neue',sans-serif;font-size:14.5cqw;line-height:.86;letter-spacing:.2cqw;white-space:nowrap}
+.title .row{display:block}.title .gold{color:var(--gold)}
+.l{display:inline-block;transform-origin:50% 100%;opacity:0}
+.badge{left:6cqw;top:35.5cqw;background:#fff;color:var(--ground);font-family:'Bebas Neue',sans-serif;font-size:5.5cqw;letter-spacing:.7cqw;padding:.3cqw 2.2cqw 0 3cqw;border-radius:4cqw}
+.tag{left:6cqw;top:45cqw;width:46cqw;font-size:2.3cqw;font-weight:500;line-height:1.3}
+.chips{left:49cqw;top:12cqw;display:flex;flex-direction:column;align-items:flex-start;gap:.9cqw}
+.chip{border:.18cqw solid var(--gold);background:#12202f;font-size:1.4cqw;font-weight:700;letter-spacing:.12cqw;padding:.7cqw 1.5cqw;border-radius:3cqw}
+.man{right:2cqw;bottom:4cqw;width:24.2cqw;height:46cqw}
+.man svg{width:100%;height:100%;display:block;overflow:visible}
+.arm{transform-origin:150px 98px}
+.ball{left:61cqw;top:46cqw;width:6cqw;height:6cqw;transform-origin:50% 100%;z-index:3}
+.ball svg{width:100%;height:100%;display:block}
+.sh{left:60cqw;top:51.6cqw;width:8cqw;height:1.1cqw;border-radius:50%;background:#000;opacity:.35}
+.sh.a{opacity:.35}
+.replay{right:2cqw;top:2cqw;min-width:44px;min-height:44px;background:rgba(255,255,255,.14);color:#fff;font:700 max(12px,1.3cqw) 'DM Sans',sans-serif;letter-spacing:.15cqw;padding:0 1.5cqw;border:0;border-radius:4cqw;cursor:pointer;z-index:9}
+/* motion */
+.go .circ{animation:breathe 2.6s ease-in-out infinite}
+.go .beam{animation:flick 1.2s .1s both}
+.go .eyebrow{animation:slide .8s .1s both}
+.go .l{animation:dropIn 1s calc(.3s + var(--i)*.09s) both}
+.go .badge{animation:pop .9s 1.7s both}
+.go .tag{animation:slide .9s 2.3s both}
+.go .chip{animation:pop .7s calc(2.7s + var(--i)*.13s) both}
+.go .man{animation:rise 1.2s 1.1s both}
+.go .man svg{animation:bob 1.5s 2.4s ease-in-out infinite}
+.go .arm{animation:point .8s 2.2s ease-in-out infinite alternate}
+.go .ball{animation:ballDrop 1.4s ease-in .4s both,ballBounce .9s ease-out 1.8s infinite backwards}
+.go .sh{animation:shadow .9s ease-out 1.8s infinite}
+@keyframes dropIn{0%{opacity:1;transform:translateY(-60cqw) scale(.9,1.25)}52%{opacity:1;transform:translateY(0) scale(1.2,.78)}68%{opacity:1;transform:translateY(-4cqw) scale(.94,1.1)}82%{opacity:1;transform:translateY(0) scale(1.07,.93)}92%{opacity:1;transform:translateY(-.8cqw)}100%{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:scale(0) rotate(-14deg)}55%{opacity:1;transform:scale(1.25) rotate(6deg)}75%{opacity:1;transform:scale(.92) rotate(-3deg)}100%{opacity:1;transform:none}}
+@keyframes slide{0%{opacity:0;transform:translateY(6cqw)}60%{opacity:1;transform:translateY(-.9cqw)}100%{opacity:1;transform:none}}
+@keyframes rise{0%{opacity:1;transform:translateY(50cqw)}55%{opacity:1;transform:translateY(-2.4cqw)}75%{opacity:1;transform:translateY(.9cqw)}100%{opacity:1;transform:none}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-.8cqw)}}
+@keyframes point{from{transform:rotate(-9deg)}to{transform:rotate(7deg)}}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes flick{0%{opacity:0}20%{opacity:.09}30%{opacity:0}45%{opacity:.11}55%{opacity:.03}100%{opacity:.07}}
+@keyframes ballDrop{0%{opacity:1;transform:translateY(-70cqw)}100%{opacity:1;transform:translateY(0) scale(1.2,.8)}}
+@keyframes ballBounce{0%{transform:translateY(0) scale(1.2,.8)}15%{transform:translateY(-1.8cqw) scale(.95,1.08)}50%{transform:translateY(-9cqw) rotate(180deg)}85%{transform:translateY(-1.8cqw) scale(.97,1.05)}100%{transform:translateY(0) scale(1.2,.8) rotate(360deg)}}
+@keyframes shadow{0%,100%{transform:scale(1.1);opacity:.4}50%{transform:scale(.55);opacity:.15}}
+@media (prefers-reduced-motion:reduce){.a,.l{opacity:1!important}*{animation:none!important}}
+</style></head>
+<body>
+<div class="stage" id="stage">
+<div class="abs circ"></div>
+<svg class="abs beams" viewBox="0 0 100 56.25" preserveAspectRatio="none"><polygon class="beam" points="58,0 74,0 62,56" fill="#fff" opacity="0"/><polygon class="beam" points="72,0 88,0 84,56" fill="#fff" opacity="0"/></svg>
+<div class="abs band"></div>
+<div class="abs eyebrow a">NIGERIAN PREMIER FOOTBALL LEAGUE</div>
+<div class="abs title"><span class="row"><span class="l" style="--i:0">N</span><span class="l" style="--i:1">P</span><span class="l" style="--i:2">F</span><span class="l" style="--i:3">L</span></span><span class="row gold"><span class="l" style="--i:4">M</span><span class="l" style="--i:5">A</span><span class="l" style="--i:6">N</span><span class="l" style="--i:7">A</span><span class="l" style="--i:8">G</span><span class="l" style="--i:9">E</span><span class="l" style="--i:10">R</span></span></div>
+<div class="abs badge a">2027</div>
+<div class="abs tag a">Pick your club. Set your tactics. Win the league.</div>
+<div class="abs chips"><div class="chip a" style="--i:0">FORMATIONS</div><div class="chip a" style="--i:1">HALF-TIME TEAM TALKS</div><div class="chip a" style="--i:2">LIVE MATCHDAY</div><div class="chip a" style="--i:3">GOLDEN BOOT RACE</div></div>
+<div class="abs man a"><svg viewBox="0 0 210 400" aria-label="Silhouette of a football manager in a suit pointing"><g fill="#04080d"><circle cx="100" cy="48" r="26"/><rect x="89" y="68" width="22" height="18"/><path d="M50 104Q58 84 90 82H110Q142 84 150 104L158 214H42Z"/><path d="M60 208H98L96 384H66ZM102 208H140L134 384H104Z"/><ellipse cx="78" cy="390" rx="22" ry="9"/><ellipse cx="122" cy="390" rx="22" ry="9"/><path d="M52 100L38 108L30 196L48 198L60 124Z"/><rect x="8" y="176" width="40" height="52" rx="4" transform="rotate(-8 28 200)"/></g><path d="M90 82L100 114L110 82Z" fill="#fff"/><path d="M100 90L94 106L100 170L106 106Z" fill="#eab94c"/><rect x="14" y="184" width="28" height="36" rx="2" fill="#fff" opacity=".9" transform="rotate(-8 28 200)"/><g class="arm" fill="#04080d"><path d="M142 98L162 96L204 36L188 26L150 78Z"/><circle cx="197" cy="28" r="10"/></g></svg></div>
+<div class="abs sh a"></div>
+<div class="abs ball a"><svg viewBox="0 0 100 100" aria-label="Football"><circle cx="50" cy="50" r="47" fill="#fff" stroke="#04080d" stroke-width="4"/><polygon points="50,30 68,43 61,64 39,64 32,43" fill="#04080d"/><path d="M50 30V8M68 43L90 36M61 64L74 84M39 64L26 84M32 43L10 36" stroke="#04080d" stroke-width="4"/></svg></div>
+<button class="abs replay" id="replay" type="button">REPLAY</button>
+</div>
+<script>
+const st=document.getElementById("stage");
+let t;
+function play(){clearTimeout(t);st.classList.remove("go");void st.offsetWidth;st.classList.add("go");t=setTimeout(loop,11000)}
+function loop(){st.classList.add("fade");setTimeout(()=>{st.classList.remove("fade");play()},400)}
+document.getElementById("replay").addEventListener("click",play);
+play();
+</script>
+</body></html>
